@@ -1,0 +1,214 @@
+<!DOCTYPE html>
+<!--[if lt IE 7]>      <html class="no-js lt-ie9 lt-ie8 lt-ie7"> <![endif]-->
+<!--[if IE 7]>         <html class="no-js lt-ie9 lt-ie8"> <![endif]-->
+<!--[if IE 8]>         <html class="no-js lt-ie9"> <![endif]-->
+<!--[if gt IE 8]><!-->
+<html class="no-js">
+<!--<![endif]-->
+
+<head>
+    <meta charset="utf-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <title>CAN-MTD 2019</title>
+    <meta name="description" content="">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+
+    <link rel="stylesheet" href="statics/css/bootstrap.min.css">
+    <link rel="stylesheet" href="statics/css/main.css">
+</head>
+
+<body>
+    <!-- NAVBAR -->
+    <div class="header">
+        <div class="header__main-title text-center">
+            <h1 class="display-2">CANeleon</h1>
+            <h5 class="display-5">Moving Target Defence (MTD) based CAN bus Guard for Autonomous Vehicles</h5>
+        </div>
+    </div>
+
+    <section class="container">
+        <div class="row my-4 text-center">
+            <div class="col">
+                <h2>Case Study Setup</h2>
+            </div>
+        </div>
+
+        <div class="row">
+            <div class="col">
+                <img src="statics/imgs/can_bus-4.jpg" alt="CAN BUS PROTOTYPE IMG">
+            </div>
+            <div class="col">
+                <h5>Case 1 CAN bus prototype</h5>
+                <p>Three nodes attached to the CAN bus, two legitimate nodes
+                    <i>ECU 1</i> and <i>ECU 2</i> and one adversary node <i>Adv</i> </p>
+                <ul>
+                    <li>
+                        <i>Node A (ECU 1)</i> <br>
+                        Raspberry Pi Model 3 B+ <br>
+                        "Sender" of frame <code>0x184h</code>
+                    </li>
+                    <li>
+                        <i>Node B (ECU 2)</i> <br>
+                        Raspberry Pi Model 3 B+ <br>
+                        "Receiver" of frame <code>0x184h</code> and replies with frame <code>0x204h</code>
+                    </li>
+                    <li>
+                        <i>Node Adv</i> <br>
+                        Laptop (Intel i7-8550U CPU, 8GB RAM) <br>
+                        "Attacker" spoofing and flooding the CAN bus with frame of legitimate ID such as
+                        <code>0x184h</code> or <code>0x204h</code>
+                    </li>
+                </ul>
+            </div>
+        </div>
+
+        <div class="row my-3">
+            <div class="col">
+                <div id="robotcar-carousel" class="carousel slide" data-ride="carousel">
+                    <ol class="carousel-indicators">
+                        <li data-target="#robotcar-carousel" data-slide-to="0" class="active"></li>
+                        <li data-target="#robotcar-carousel" data-slide-to="1"></li>
+                        <li data-target="#robotcar-carousel" data-slide-to="2"></li>
+                        <li data-target="#robotcar-carousel" data-slide-to="3"></li>
+                        <li data-target="#robotcar-carousel" data-slide-to="4"></li>
+                        <li data-target="#robotcar-carousel" data-slide-to="5"></li>
+                    </ol>
+                    <div class="carousel-inner">
+                        <div class="carousel-item active">
+                            <img src="statics/imgs/robocar-crop.jpg" class="d-block w-100" alt="Front">
+                            <div class="carousel-caption d-none d-md-block">
+                                <h5>Front</h5>
+                                <!-- <p>Nulla vitae elit libero, a pharetra augue mollis interdum.</p> -->
+                            </div>
+                        </div>
+                        <div class="carousel-item">
+                            <img src="statics/imgs/robocar-2-crop.jpg" class="d-block w-100" alt="Front 2">
+                            <div class="carousel-caption d-none d-md-block">
+                                <h5>Front 2</h5>
+                                <!-- <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit.</p> -->
+                            </div>
+                        </div>
+                        <div class="carousel-item">
+                            <img src="statics/imgs/robocar-3.jpg" class="d-block w-100" alt="Back">
+                            <div class="carousel-caption d-none d-md-block">
+                                <h5>Back</h5>
+                                <!-- <p>Praesent commodo cursus magna, vel scelerisque nisl consectetur.</p> -->
+                            </div>
+                        </div>
+                        <div class="carousel-item">
+                            <img src="statics/imgs/robocar-wires.jpg" class="d-block w-100"
+                                alt="Original CAN bus Setup">
+                            <div class="carousel-caption d-none d-md-block">
+                                <h5>Original CAN bus Setup</h5>
+                                <!-- <p>Praesent commodo cursus magna, vel scelerisque nisl consectetur.</p> -->
+                            </div>
+                        </div>
+                        <div class="carousel-item">
+                            <img src="statics/imgs/robocar-can3.jpg" class="d-block w-100" alt="CANeleon Setup">
+                            <div class="carousel-caption d-none d-md-block">
+                                <h5>CANeleon Setup</h5>
+                                <!-- <p>Praesent commodo cursus magna, vel scelerisque nisl consectetur.</p> -->
+                            </div>
+                        </div>
+                        <div class="carousel-item">
+                            <img src="statics/imgs/pc-can.jpg" class="d-block w-100" alt="CANeleon Diagram">
+                            <div class="carousel-caption d-none d-md-block">
+                                <!-- <h5>CANeleon Diagram</h5> -->
+                                <!-- <p>Praesent commodo cursus magna, vel scelerisque nisl consectetur.</p> -->
+                            </div>
+                        </div>
+                    </div>
+                    <a class="carousel-control-prev" href="#robotcar-carousel" role="button" data-slide="prev">
+                        <span class="carousel-control-prev-icon" aria-hidden="true"></span>
+                        <span class="sr-only">Previous</span>
+                    </a>
+                    <a class="carousel-control-next" href="#robotcar-carousel" role="button" data-slide="next">
+                        <span class="carousel-control-next-icon" aria-hidden="true"></span>
+                        <span class="sr-only">Next</span>
+                    </a>
+                </div>
+            </div>
+            <div class="col">
+                <h5>Case 2 Self-Driving Car</h5>
+                <p class="mb-3">The vehicle hardware specifications are: </p>
+                <ul>
+                    <li>Vehicle Model <br> Toyota COMS EV</li>
+                    <li>Control System <br> Autoware (ROS-based)</li>
+                    <li>Sensors <br>Velodyne 16-line Lidar, radar, camera, GPS/IMU module</li>
+                    <li>Path Following Algorithm <br> Pure Pursuit</li>
+                </ul>
+                <p>Attack Scenario: An attacker attemps to attack CAN0 from PC.</p>
+            </div>
+        </div>
+        <hr class="my-5">
+    </section>
+
+    <section class="container">
+        <div class="row text-center mb-3">
+            <div class="col">
+                <h2>Videos of Self-Driving Vehicle</h2>
+            </div>
+        </div>
+        <div class="row">
+            <div class="col">
+                <iframe width="560" height="315" src="https://www.youtube.com/embed/e0NMfK0s3Jg" frameborder="0"
+                    allow="accelerometer; autoplay; encrypted-media; gyroscope; picture-in-picture"
+                    allowfullscreen></iframe>
+            </div>
+            <div class="col">
+                <h5>Normal Trajectory Following</h5>
+                <p>The normal run is consists of three parts:</p>
+                <ol>
+                    <li class="mt-3"><strong>The initial stage</strong> the vehicle accel-
+                        erated to a target speed, then maintain the current speed
+                        until it entered the circle.</li>
+                    <li class="mt-3"><strong>The apex stage</strong> the vehicle steered and
+                        reduced the velocity to complete a big U-turn.</li>
+                    <li class="mt-3"><strong>The returning state</strong> the vehicle com-
+                        pleted the U-turn, accelerated and finally slowed down at
+                        the end.</li>
+                </ol>
+            </div>
+        </div>
+        <div class="row">
+            <div class="col">
+                <iframe width="560" height="315" src="https://www.youtube.com/embed/d0uL0KS819E" frameborder="0"
+                    allow="accelerometer; autoplay; encrypted-media; gyroscope; picture-in-picture"
+                    allowfullscreen></iframe>
+            </div>
+            <div class="col">
+                <h5>Stopped by CAN bus attacks</h5>
+                <p>In this attack scenario, fabricated <code>0x184h</code> frames were injected
+                    from the PC side at about 4s after the car started, which deceived the target ECU that the
+                    ‘expected’ velocity is 0 m/s.</p>
+                <p>Without CANeleon, the gateway forwarded all those frames to ECUs.
+                    Consequently, the vehicle velocity quickly reduced and the car finally stopped, leaving the
+                    self-driving system desperately trying to move it forward.</p>
+            </div>
+        </div>
+        <div class="row">
+            <div class="col">
+                <iframe width="560" height="315" src="https://www.youtube.com/embed/PVk5SQewAog" frameborder="0"
+                    allow="accelerometer; autoplay; encrypted-media; gyroscope; picture-in-picture"
+                    allowfullscreen></iframe>
+            </div>
+            <div class="col">
+                <h5>CAN bus revived from attack</h5>
+                <p>with CANeleon enabled on both the PC and gateway, the system would successfully mitigate the attack.
+                </p>
+                <p>After the attack was identified, both the PC and the
+                    gateway quickly switched from <code>0x184h</code> to <code>0x17Fh</code> to continue sending the
+                    commands to the ECU, and the gateway interpreted each <code>0x17Fh</code> and sent it to CAN1 as
+                    <code>0x184h</code> frames.</p>
+                <p> As a result, the vehicle was able to fully complete the normal trajectory, although with a slight
+                    delay due to the stop.</p>
+            </div>
+        </div>
+    </section>
+
+
+    <script src="statics/js/jquery-3.4.1.min.js"></script>
+    <script src="statics/js/bootstrap.bundle.min.js"></script>
+</body>
+
+</html>
